@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0"
+    xmlns="https://jakarta.ee/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+
+    <persistence-unit name="jpa-hibernate-sqlserver">
+        <!-- Danh sách các Entity theo quy tắc đặt tên _24133012 -->
+        <class>trungduc.vn.entity.User_24133012</class>
+        <class>trungduc.vn.entity.Category_24133012</class>
+        <class>trungduc.vn.entity.Video_24133012</class>
+        <class>trungduc.vn.entity.Favorite_24133012</class>
+        <class>trungduc.vn.entity.Share_24133012</class>
+        <class>trungduc.vn.entity.Order_24133012</class>
+        <class>trungduc.vn.entity.OrderDetail_24133012</class>
+
+        <properties>
+            <!-- Cấu hình JDBC cho SQL Server -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=24133012_made;encrypt=true;trustServerCertificate=true;sendStringParametersAsUnicode=true" />
+            <property name="jakarta.persistence.jdbc.user" value="sa" />
+            <property name="jakarta.persistence.jdbc.password" value="123456" />
+
+            <!-- Cấu hình Hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+    </persistence-unit>
+
+</persistence>
